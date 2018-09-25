@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+	<link rel="icon" type="image/png" href="images/icons/favicon.png">
+	<link rel="stylesheet" type="text/css" href="sign in.css">
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+
+ <style>
+#randomfield { 
+-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+  width: 200px;
+  color: black;
+  border-color: black;
+  text-align: center;
+  font-size: 40px;
+  background-image: url('http://4.bp.blogspot.com/-EEMSa_GTgIo/UpAgBQaE6-I/AAAAAAAACUE/jdcxZVXelzA/s1600/ca.png');
+}
+</style>
+
+
+
+</head>
+<body onLoad="ChangeCaptcha()">
+
+	<div class="s1" >
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+			<form id=" check()"class="login100-form validate-form" action="file:///F:/yogi%20html/project/successfully.htm">
+				<span class="login100-form-title">
+					Register
+				</span>
+
+				<div id="check()" class="wrap-input100 validate-input m-b-20" >
+					<input class="input100" type="number" name="name" placeholder="PHONE NUMBER" required>
+					
+					<input class="input100" type="username" name="mail" placeholder="E-mail" required>
+				
+					<input class="input100" type="text" name="name" placeholder="NAME" required>
+			</br>	<label>DOB :</label>
+			<input type="date" name="" required=""><br>
+
+				<br></br>
+
+					<label>		</label>
+							<input type="password" name="password" id="password" placeholder="PASSWORD" style=color:rgba(185,0,255,0.5) required >
+							<button type="button" id="show_hide" name="show_hide" style="">Show</button>
+					<br></br>
+				
+		<input type="text" id="randomfield" disabled>
+<script>
+// Do not remove this (it's just a comment and won't effect the functions)
+// SimpleCaptcha v1.0 © Anudeep Tubati under MIT License
+function ChangeCaptcha() {
+	var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+	var string_length = 4;
+	var ChangeCaptcha = '';
+	for (var i=0; i<string_length; i++) {
+		var rnum = Math.floor(Math.random() * chars.length);
+		ChangeCaptcha += chars.substring(rnum,rnum+1);
+	}
+	document.getElementById('randomfield').value = ChangeCaptcha;
+}
+function check() {
+if(document.getElementById('CaptchaEnter').value == document.getElementById('randomfield').value ) {
+window.open('','_self'); // Change the page to which the re-direction is to be done.
+}
+else {
+alert('Please re-check the captcha');
+}
+}
+</script>
+<br><br>
+<input id="CaptchaEnter" size="20" maxlength="4"  placeholder="ENTER Captcha"/>
+<br><br>
+<div id="check()">
+	
+</div>
+<div class="button">
+<button onclick="check()">SUBMIT</button>
+			    
+
+			
+	
+			
+</form>
+</div>
+</form></div></div></body>		
+</body>
+</html>
+<script>
+$(document).ready(function(){
+ $('#show_hide').on('click', function(){
+ var passwordField = $('#password');
+ var passwordFieldType = passwordField.attr('type');
+ if(passwordFieldType == 'password')
+ {
+ passwordField.attr('type', 'text');
+ $(this).text('Hide');
+ }
+ else
+ {
+ passwordField.attr('type', 'password');
+ $(this).text('show');
+ }
+ });
+});
+</script>
